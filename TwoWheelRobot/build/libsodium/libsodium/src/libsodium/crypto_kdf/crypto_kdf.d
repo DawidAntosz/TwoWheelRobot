@@ -1,0 +1,15 @@
+libsodium/src/libsodium/crypto_kdf/crypto_kdf.o: \
+ C:/Dev/esp8266/msys32/home/Dawid/esp/ESP8266_RTOS_SDK/components/libsodium/libsodium/src/libsodium/crypto_kdf/crypto_kdf.c \
+ C:/Dev/esp8266/msys32/home/Dawid/esp/ESP8266_RTOS_SDK/components/libsodium/libsodium/src/libsodium/include/sodium/crypto_kdf.h \
+ C:/Dev/esp8266/msys32/home/Dawid/esp/ESP8266_RTOS_SDK/components/libsodium/libsodium/src/libsodium/include/sodium/crypto_kdf_blake2b.h \
+ C:/Dev/esp8266/msys32/home/Dawid/esp/ESP8266_RTOS_SDK/components/libsodium/libsodium/src/libsodium/include/sodium/export.h \
+ C:/Dev/esp8266/msys32/home/Dawid/esp/ESP8266_RTOS_SDK/components/libsodium/libsodium/src/libsodium/include/sodium/randombytes.h
+
+C:/Dev/esp8266/msys32/home/Dawid/esp/ESP8266_RTOS_SDK/components/libsodium/libsodium/src/libsodium/include/sodium/crypto_kdf.h:
+
+C:/Dev/esp8266/msys32/home/Dawid/esp/ESP8266_RTOS_SDK/components/libsodium/libsodium/src/libsodium/include/sodium/crypto_kdf_blake2b.h:
+
+C:/Dev/esp8266/msys32/home/Dawid/esp/ESP8266_RTOS_SDK/components/libsodium/libsodium/src/libsodium/include/sodium/export.h:
+
+C:/Dev/esp8266/msys32/home/Dawid/esp/ESP8266_RTOS_SDK/components/libsodium/libsodium/src/libsodium/include/sodium/randombytes.h:
+/home/Dawid/esp/ESP8266_RTOS_SDK/components/libsodium/libsodium/src/libsodium/crypto_kdf/crypto_kdf.c:
