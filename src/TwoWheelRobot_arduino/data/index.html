@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Control</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="map">
+            <canvas id="robot-map" width="600" height="600"></canvas>
+        </div>
+        <div class="controls-info-wrapper">
+            <div id="controls">
+                <div class="arrows">
+                    <button id="up" class="control-btn"><i class="arrow up"></i></button><br>
+                    <button id="left" class="control-btn"><i class="arrow left"></i></button>
+                    <button id="start" class="control-btn">▶</button>
+                    <button id="right" class="control-btn"><i class="arrow right"></i></button><br>
+                    <button id="down" class="control-btn"><i class="arrow down"></i></button>
+                </div>
+                <div class="slider-container">
+                    <input type="range" id="speed-slider" min="0" max="100" value="0" orient="vertical">
+                    <div>
+                        <label for="speed-slider" id="speed-label">Speed:</label>
+                        <span id="speed-value">0</span>
+                    </div>
+                </div>
+            </div>
+            <div id="info-panel">
+                <h3>Robot Info</h3>
+                <div class="info-content">
+                    <div class="info-column">
+                        <p>V<sub>l</sub>: <span id="left-speed">0</span> [m/s]</p>
+                        <p>d<sub>l</sub>: <span id="left-distance">0</span> [m]</p>
+                    </div>
+                    <div class="info-column">
+                        <p>V<sub>r</sub>: <span id="right-speed">0</span> [m/s]</p>
+                        <p>d<sub>r</sub>: <span id="right-distance">0</span> [m]</p>
+                    </div>
+                </div>
+                <div class="position-section">
+                    <div class="target-position">
+                        <h4>Target Position</h4>
+                        <p>x<sub>t</sub>: <input type="number" id="target-x" placeholder="0" /> [cm]</p>
+                        <p>y<sub>t</sub>: <input type="number" id="target-y" placeholder="0" /> [cm]</p>
+                        <p>&theta;<sub>t</sub>: <input type="number" id="target-theta" placeholder="0" />
+                            [rad]</p>
+                    </div>
+                    <div class="current-position">
+                        <h4>Current Position</h4>
+                        <p>x: <span id="current-x">0</span> [cm]</p>
+                        <p>y: <span id="current-y">0</span> [cm]</p>
+                        <p>&theta;: <span id="current-theta">0</span> [rad]</p>
+                    </div>
+                </div>
+                <div class="action-section">
+                    <button id="send-target">Send Target</button>
+                    <div id="response-status">...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="/script.js"></script> -->
+    <script type="module" src="src/app.js"></script>
+</body>
+
+</html>
