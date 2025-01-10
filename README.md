@@ -1,12 +1,13 @@
 # TwoWheelRobot
 Differential wheeled robot
+This project is focused on building a two-wheel differential robot with the ability to control and navigate in area.
 
-└── src/
+## Project Structure
+The project is organized into the following directories:
 
-    ├── arduino/       # framework Arduino from platform io
-    
-    ├── esp_rtos_sdk/  # (for the future development of the project)
-
+- `src/`: Contains the source code for the project.
+  - `arduino/`: Source code using the Arduino framework (PlatformIO).
+  - `esp_rtos_sdk/`: (For future development of the project using the ESP8266 RTOS SDK).
 
 
 ##### Control page:
