@@ -13,14 +13,19 @@
 #define KI 0.1
 #define KD 0.05
 // physical dimensions
-#define L 200 // rozstaw kol (od srodka kola)
-#define D 67 // srednica kola
+#define WHEEL_BASE 200 // rozstaw kol (od srodka kola)
+#define WHEEL_RADIUS 33.5 // srednica kola 67/2 [mm]
 // position algorithm
 #define POSITION_TOLERANCE 5.0 // [mm]
 #define ANGLE_TOLERANCE 0.1 // [rad]
 
 #define TIMER_INTERVAL_ENCODER_MS 100 // [ms] <= 10ms is good
 #define TIMER_INTERVAL_NAVIGATE_MS 100 // [ms]
+
+enum Side {
+    LEFT = 0,
+    RIGHT = 1
+};
 
 class MotionController 
 {
@@ -36,22 +41,25 @@ class MotionController
         Pose targetPose;
 
         Ticker encodersTimer;
-        static void encoderTimerCallback(MotionController *controller);
+        void encodersTimerCallback(void);
+        float velocities[2]; //V = [mm]/[ms]
         float lastVelocities[2];
-        float velocities[2];
         unsigned long lastUpdateTime;
 
+        float distance[2];
+        float totalDistance;
+
         Ticker navigationTimer;
-        static void navigateTimerCallback(MotionController *controller);
+        void navigateTimerCallback(void);
 
     public:
         MotionController();
-        ~MotionController() = default;
+        ~MotionController();
 
         void init(void);
         void stop(void);
         void setTarget(float x, float y, float theta);
-        void navigate(void);
+        Pose readCurrentPose() const;
 };
 
 #endif // MOTION_CONTROLLER_H
