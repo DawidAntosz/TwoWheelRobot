@@ -40,6 +40,11 @@ void MotionController::encodersTimerCallback(void)
     
     lastVelocities[LEFT] = currentVelocities[LEFT];
     lastVelocities[RIGHT] = currentVelocities[RIGHT];
+    Serial.print("left: ");
+    Serial.println(velocities[LEFT]);
+    Serial.print("right: ");
+    Serial.println(velocities[RIGHT]);
+    
 
     // update Distance
     float deltaDistance[2];

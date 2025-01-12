@@ -1,14 +1,16 @@
 #include <Arduino.h>
-#include "constants.hpp"
+#include "WiFiConfig.hpp"
 #include "MotionController.hpp"
+#include "WiFiManager.hpp"
 
 MotionController motionController;
+WiFiManager wifiManager;
 
 void setup(void)
 { 
   Serial.begin(115200);
   motionController.init();
-  motionController.setTarget(100, 100, 0);
+  wifiManager.begin(WiFiConfig::SSID, WiFiConfig::PASSWORD);
 }
 
 void loop(void) 
