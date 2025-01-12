@@ -27,9 +27,9 @@ void MotionController::init(void)
 void MotionController::encodersTimerCallback(void)
 {
     unsigned long currentTime = millis();
-    unsigned long deltaTime = currentTime - lastUpdateTime;
+    unsigned long deltaTime = currentTime - lastUpdateTime / 1000.0f;
     lastUpdateTime = currentTime;
-
+    
     // update linear Velocity
     float currentVelocities[2];
     currentVelocities[LEFT] = leftEncoder.getAngularVelocity() * WHEEL_RADIUS;
@@ -39,12 +39,7 @@ void MotionController::encodersTimerCallback(void)
     velocities[RIGHT] = (currentVelocities[RIGHT] + lastVelocities[RIGHT]) / 2.0f;
     
     lastVelocities[LEFT] = currentVelocities[LEFT];
-    lastVelocities[RIGHT] = currentVelocities[RIGHT];
-    Serial.print("left: ");
-    Serial.println(velocities[LEFT]);
-    Serial.print("right: ");
-    Serial.println(velocities[RIGHT]);
-    
+    lastVelocities[RIGHT] = currentVelocities[RIGHT];    
 
     // update Distance
     float deltaDistance[2];
@@ -64,6 +59,7 @@ void MotionController::encodersTimerCallback(void)
     if (currentPose.theta < 0) {
         currentPose.theta += 2 * M_PI;
     }
+
     currentPose.x += centerDistance * cos(currentPose.theta);
     currentPose.y += centerDistance * sin(currentPose.theta);
 }
@@ -92,7 +88,5 @@ void MotionController::setTarget(float x, float y, float theta)
 
 Pose MotionController::readCurrentPose() const 
 {
-    Serial.print("Adress to private variable currentPose: ");
-    Serial.println((uintptr_t)&currentPose, HEX);
     return currentPose;
 }

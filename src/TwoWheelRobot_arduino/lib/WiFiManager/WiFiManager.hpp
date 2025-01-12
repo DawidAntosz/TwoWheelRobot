@@ -5,7 +5,10 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
 #include <ArduinoJson.h>
-#include <FS.h>
+#include <LittleFS.h>
+#include <Ticker.h>
+
+#define TIMER_INTERVAL_WIFI_MS 2000
 
 struct CommandReceive
 {
@@ -28,11 +31,17 @@ class WiFiManager
         void handleRobotControl();
         void handleRoot();
 
+        Ticker wifiTimer;
+        void wifiTimerCallback(void);
+
+        void listFiles(void);
+
     public:
         WiFiManager();
         ~WiFiManager()= default;
 
         void begin(const char *ssid, const char *password);
+        void handleServer(void);
 };
 
 #endif // WIFIMANAGER_H

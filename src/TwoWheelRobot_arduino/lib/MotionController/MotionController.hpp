@@ -30,8 +30,8 @@ enum Side {
 class MotionController 
 {
     private:
-        Encoder leftEncoder;
-        Encoder rightEncoder;
+        Encoder leftEncoder; // do przodu dodatnie - do tylu ujemne
+        Encoder rightEncoder; // do tylu dodatnie prawe do przodu - wartosci ujemne 
         CytronMD10A motorController;
 
         PID leftPID;
