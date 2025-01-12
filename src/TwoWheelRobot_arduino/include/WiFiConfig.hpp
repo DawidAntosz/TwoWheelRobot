@@ -4,7 +4,7 @@
 
 namespace WiFiConfig {
     const char* SSID = "SSID";
-    const char* PASSWORD = "Password";
+    const char* PASSWORD = "haslo";
 }
 
 #endif // WIFICONFIG_H
