@@ -45,3 +45,25 @@ $$
 $$
 \dot{\phi} = \omega
 $$
+
+$$
+v = \frac{R}{2}(v_r + v_\ell) \implies \frac{2v}{R} = v_r + v_\ell
+$$
+
+$$
+\omega = \frac{R}{L}(v_r - v_\ell) \implies \frac{\omega L}{R} = v_r - v_\ell
+$$
+ $$
+v = \frac{R}{2}(v_r + v_\ell) \implies \frac{2v}{R} = v_r + v_\ell
+$$
+
+$$
+\omega = \frac{R}{L}(v_r - v_\ell) \implies \frac{\omega L}{R} = v_r - v_\ell
+$$
+
+Description parameters:
+- \( v_r \): the speed of the right wheel
+- \( v_\ell \): the speed of the left wheel
+- \( R \): the radius of the wheel
+- \( L \): the distance between the wheels
+- \( \omega \): the angular velocity of the robot
