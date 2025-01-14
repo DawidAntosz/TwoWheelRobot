@@ -35,3 +35,13 @@ $$
 $$
 \dot{\phi} = \frac{R}{L}(v_r - v_\ell)
 $$
+
+$$
+\dot{x} = v\cos\phi
+$$
+$$
+\dot{y} = v\sin\phi
+$$
+$$
+\dot{\phi} = \omega
+$$
