@@ -53,13 +53,7 @@ $$
 $$
 \omega = \frac{R}{L}(v_r - v_\ell) \implies \frac{\omega L}{R} = v_r - v_\ell
 $$
-$$
-v = \frac{R}{2}(v_r + v_\ell) \implies \frac{2v}{R} = v_r + v_\ell
-$$
-
-$$
-\omega = \frac{R}{L}(v_r - v_\ell) \implies \frac{\omega L}{R} = v_r - v_\ell
-$$
+\[ v_r = \\frac{2v + \\omega L}{2R} \\] \ \[ v_l = \\frac{2v - \\omega L}{2R} \\]
 
 Description parameters:
 - \( v_r \): the speed of the right wheel
