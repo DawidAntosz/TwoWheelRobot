@@ -53,7 +53,7 @@ $$
 $$
 \omega = \frac{R}{L}(v_r - v_\ell) \implies \frac{\omega L}{R} = v_r - v_\ell
 $$
- $$
+$$
 v = \frac{R}{2}(v_r + v_\ell) \implies \frac{2v}{R} = v_r + v_\ell
 $$
 
