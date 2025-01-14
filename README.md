@@ -53,11 +53,12 @@ $$
 $$
 \omega = \frac{R}{L}(v_r - v_\ell) \implies \frac{\omega L}{R} = v_r - v_\ell
 $$
+$$
 \[ v_r = \\frac{2v + \\omega L}{2R} \\] \ \[ v_l = \\frac{2v - \\omega L}{2R} \\]
-
+$$
 Description parameters:
 - \( v_r \): the speed of the right wheel
 - \( v_\ell \): the speed of the left wheel
 - \( R \): the radius of the wheel
 - \( L \): the distance between the wheels
-- \( \omega \): the angular velocity of the robot
+- \( $$\omega$$ \): the angular velocity of the robot
