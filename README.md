@@ -24,8 +24,10 @@ The project is organized into the following directories:
 ##### Math model
 $$
 \dot{x} = \frac{R}{2}(v_r + v_\ell)\cos\phi
-
+$$
+$$
 \dot{y} = \frac{R}{2}(v_r + v_\ell)\sin\phi
-
+$$
+$$
 \dot{\phi} = \frac{R}{L}(v_r - v_\ell)
 $$
