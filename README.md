@@ -22,9 +22,9 @@ The project is organized into the following directories:
 
 
 ##### Math model
-
-![obraz](https://github.com/user-attachments/assets/35ea4db8-ad05-4e44-a2db-79f5267f586a)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/35ea4db8-ad05-4e44-a2db-79f5267f586a" width="400" /> 
+</p>
 
 $$
 \dot{x} = \frac{R}{2}(v_r + v_\ell)\cos\phi
