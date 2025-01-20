@@ -1,4 +1,3 @@
-import { globalState } from "../utils/states.js";
 import { RobotView } from "../robot/robotView.js";
 
 export class Map {
@@ -8,8 +7,7 @@ export class Map {
     this.width = this.canvas.width;
     this.height = this.canvas.height;
     this.gridSize = 20;
-    this.robotView = new RobotView(this.ctx);
-    globalState.robotPosition = { x: this.width / 2, y: this.height / 2 };
+    this.robotView = new RobotView(this.ctx, this.width, this.height);
   }
 
   drawGrid() {

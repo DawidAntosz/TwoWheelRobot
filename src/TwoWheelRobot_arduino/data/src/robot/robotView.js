@@ -1,8 +1,10 @@
-import { globalState, controlState } from "../utils/states.js";
+import { controlState, globalState } from "../utils/states.js";
 
 export class RobotView {
-  constructor(mapContext) {
+  constructor(mapContext, mapWidth, mapHeight) {
     this.ctx = mapContext;
+
+    // Image robot
     this.robotImage = new Image();
     this.robotImage.src = "../assets/robot.png";
     this.robotLoaded = false;
@@ -10,21 +12,27 @@ export class RobotView {
       this.robotLoaded = true;
     };
     this.robotSize = 100;
+
+    // Robot controlls
     this.lastUpdateTime = performance.now();
-    globalState.robotPosition = { x: this.width / 2, y: this.height / 2 };
+    this.robotPosition = {
+      x: mapWidth / 2,
+      y: mapWidth / 2,
+      theta: -Math.PI / 2,
+    };
+
+    this.acceleration = 10;
+    this.angularAcceleration = Math.PI / 2;
   }
 
   drawRobot(ctx) {
     if (!this.robotLoaded) return;
 
-    const { x, y, theta } = globalState.robotPosition;
+    const { x, y, theta } = this.robotPosition;
 
     this.ctx.save();
-    this.ctx.translate(
-      globalState.robotPosition.x,
-      globalState.robotPosition.y
-    );
-    this.ctx.rotate(globalState.robotPosition.theta);
+    this.ctx.translate(this.robotPosition.x, this.robotPosition.y);
+    this.ctx.rotate(this.robotPosition.theta);
     this.ctx.drawImage(
       this.robotImage,
       -this.robotSize / 2,
@@ -36,35 +44,32 @@ export class RobotView {
   }
 
   updatePosition() {
-    const currentTime = performance.now();
-    const deltaTime = (currentTime - this.lastUpdateTime) / 1000;
-    this.lastUpdateTime = currentTime;
+    const { up, down, left, right, start } = controlState;
+    const maxSpeed = globalState.currentSpeed;
 
-    const { up, down, left, right } = controlState;
-    const acceleration = 1;
-    const angularVelocity = Math.PI / 10;
+    if (start && maxSpeed != 0) {
+      let { x, y, theta } = this.robotPosition;
 
-    let { x, y, theta } = globalState.robotPosition;
-    let v = globalState.currentSpeed; // Aktualna prędkość
-    let w = 0;
+      const currentTime = performance.now();
+      const deltaTime = (currentTime - this.lastUpdateTime) / 100;
+      this.lastUpdateTime = currentTime;
 
-    if (up) v += acceleration * deltaTime; // Wolniejsze przyspieszanie
-    if (down) v -= acceleration * deltaTime; // Wolniejsze hamowanie
-    if (left) w += angularVelocity * deltaTime; // Powolna rotacja w lewo
-    if (right) w -= angularVelocity * deltaTime; // Powolna rotacja w prawo
+      let dv = 0;
+      let w = 0;
 
-    if (w > Math.PI / 2) w = Math.PI / 2;
-    if (w < -Math.PI / 2) w = -Math.PI / 2;
+      if (up) dv += this.acceleration * deltaTime;
+      if (down) dv -= this.acceleration * deltaTime;
 
-    theta += w * deltaTime;
-    x += v * Math.cos(theta) * deltaTime;
-    y += v * Math.sin(theta) * deltaTime;
-    globalState.robotPosition = { x: 200, y: 200, theta: Math.PI / 4 };
-    // Aktualizacja stanu globalnego
-    // globalState.robotPosition = { x, y, theta };
-    // globalState.currentSpeed = v;
+      if (left) w -= this.angularAcceleration * deltaTime;
+      if (right) w += this.angularAcceleration * deltaTime;
 
-    // console.log(`Position: (${x}, ${y}), Theta: ${theta}`);
-    // console.log(`deltaTime: ${deltaTime}`);
+      theta += w * deltaTime;
+
+      x += dv * Math.cos(theta) * deltaTime;
+      y += dv * Math.sin(theta) * deltaTime;
+
+      this.robotPosition = { x, y, theta };
+      console.log(`Position: (${x}, ${y}), Theta: ${theta}`);
+    }
   }
 }

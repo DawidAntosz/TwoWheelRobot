@@ -1,4 +1,4 @@
-import { globalState, controlState } from "../utils/states.js";
+import { controlState, globalState } from "../utils/states.js";
 import { keyMapping } from "../utils/constants.js";
 import { sendDataToRobot } from "./api.js";
 
@@ -21,8 +21,7 @@ export class RobotControl {
   initSpeedControl() {
     this.speedSlider.addEventListener("input", (e) => {
       globalState.currentSpeed = e.target.value;
-      this.speedValue.textContent = globalState.currentSpeed;
-      // console.log(this.speedValue.textContent);
+      this.speedValue.textContent = e.target.value;
       // sendDataToRobot({ type: "speed", value: globalState.currentSpeed });
     });
   }
