@@ -14,10 +14,8 @@ The project is organized into the following directories:
 ##### Control page:
 <p align="center">
 <!--   <img src="https://github.com/user-attachments/assets/38fbeb17-e8d2-4559-942d-c8bff26c4116" width="600" />  -->
-  <img src="" width="600" /> 
+  <img src="https://github.com/user-attachments/assets/38b9f7e8-5eff-4320-b6f4-4259ef2db660" width="600" /> 
 </p>
-![optimal](https://github.com/user-attachments/assets/abc5d756-359a-48f5-ad2e-c71c33eb6f83)
-
 
 
 ##### Robot V1:
