@@ -13,9 +13,10 @@ The project is organized into the following directories:
 
 ##### Control page:
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/38fbeb17-e8d2-4559-942d-c8bff26c4116" width="600" /> 
-  <img src="https://github.com/user-attachments/assets/dcfdca76-77ce-4a97-866f-f030b02037df" width="600" /> 
+<!--   <img src="https://github.com/user-attachments/assets/38fbeb17-e8d2-4559-942d-c8bff26c4116" width="600" />  -->
+  <img src="" width="600" /> 
 </p>
+![optimal](https://github.com/user-attachments/assets/abc5d756-359a-48f5-ad2e-c71c33eb6f83)
 
 
 
