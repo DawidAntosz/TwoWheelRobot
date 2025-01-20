@@ -1,16 +1,10 @@
-import { globalState } from "../utils/states.js";
+import { globalState, controlState } from "../utils/states.js";
 import { keyMapping } from "../utils/constants.js";
 import { sendDataToRobot } from "./api.js";
 
 export class RobotControl {
   constructor() {
-    this.controlState = {
-      up: false,
-      down: false,
-      left: false,
-      right: false,
-      start: false,
-    };
+    this.controlState = controlState;
     this.speedSlider = document.getElementById("speed-slider");
     this.speedValue = document.getElementById("speed-value");
 
@@ -28,7 +22,7 @@ export class RobotControl {
     this.speedSlider.addEventListener("input", (e) => {
       globalState.currentSpeed = e.target.value;
       this.speedValue.textContent = globalState.currentSpeed;
-      console.log(this.speedValue.textContent);
+      // console.log(this.speedValue.textContent);
       // sendDataToRobot({ type: "speed", value: globalState.currentSpeed });
     });
   }
@@ -95,24 +89,20 @@ export class RobotControl {
       });
       return;
     }
-    console.log(this.activeKeys);
+    // console.log(this.activeKeys);
     this.activeKeys.forEach((key) => {
       switch (key) {
         case "w":
           this.controlState.up = true;
-          globalState.robotPosition.y -= 10;
           break;
         case "s":
           this.controlState.down = true;
-          globalState.robotPosition.y += 10;
           break;
         case "a":
           this.controlState.left = true;
-          globalState.robotPosition.x -= 10;
           break;
         case "d":
           this.controlState.right = true;
-          globalState.robotPosition.x += 10;
           break;
         case " ":
           this.controlState.start = !this.controlState.start;
@@ -130,7 +120,7 @@ export class RobotControl {
     if (
       JSON.stringify(this.controlState) !== JSON.stringify(previousControlState)
     ) {
-      console.log(this.controlState);
+      // console.log(this.controlState);
       // sendDataToRobot({ type: "control", state: { ...controlState } });
     }
   }

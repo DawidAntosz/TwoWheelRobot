@@ -1,4 +1,5 @@
 import { globalState } from "../utils/states.js";
+import { RobotView } from "../robot/robotView.js";
 
 export class Map {
   constructor() {
@@ -7,7 +8,7 @@ export class Map {
     this.width = this.canvas.width;
     this.height = this.canvas.height;
     this.gridSize = 20;
-    this.robotSize = 3;
+    this.robotView = new RobotView(this.ctx);
     globalState.robotPosition = { x: this.width / 2, y: this.height / 2 };
   }
 
@@ -45,21 +46,12 @@ export class Map {
     ctx.stroke();
   }
 
-  drawRobot() {
-    const { robotPosition } = globalState;
-    const { ctx } = this;
-    ctx.fillStyle = "red";
-    // console.log(robotPosition);
-    ctx.beginPath();
-    ctx.arc(robotPosition.x, robotPosition.y, this.robotSize, 0, 2 * Math.PI);
-    ctx.fill();
-  }
-
   render() {
     const { ctx, width, height } = this;
     ctx.clearRect(0, 0, width, height);
     this.drawGrid();
     this.drawAxes();
-    this.drawRobot();
+    this.robotView.updatePosition();
+    this.robotView.drawRobot(ctx);
   }
 }
