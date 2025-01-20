@@ -12,8 +12,13 @@ The project is organized into the following directories:
 
 
 ##### Control page:
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/38fbeb17-e8d2-4559-942d-c8bff26c4116" width="400" /> 
+</p>
 
-![obraz](https://github.com/user-attachments/assets/38fbeb17-e8d2-4559-942d-c8bff26c4116)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/88e80616-a877-47e9-b83b-8416e1d7188e" width="400" /> 
+</p>
 
 
 ##### Robot V1:
