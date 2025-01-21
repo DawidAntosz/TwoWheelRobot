@@ -26,7 +26,9 @@ The project is organized into the following directories:
 
 ##### Math model
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/35ea4db8-ad05-4e44-a2db-79f5267f586a" width="400" /> 
+  <img src="https://github.com/user-attachments/assets/2f06915f-ba95-41ab-ba28-fcc3190b7068" width="400" /> 
+
+
 </p>
 
 $$
