@@ -14,7 +14,7 @@ The project is organized into the following directories:
 ##### Control page:
 <p align="center">
 <!--   <img src="https://github.com/user-attachments/assets/38fbeb17-e8d2-4559-942d-c8bff26c4116" width="600" />  -->
-  <img src="https://github.com/user-attachments/assets/ae9696d6-e501-4e7d-8e18-3af48c804a24" width="600" /> 
+  <img src="https://github.com/user-attachments/assets/2f06915f-ba95-41ab-ba28-fcc3190b7068" width="600" /> 
 <!--   <img src="" width="600" />  -->
 </p>
 
@@ -26,8 +26,7 @@ The project is organized into the following directories:
 
 ##### Math model
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/2f06915f-ba95-41ab-ba28-fcc3190b7068" width="400" /> 
-
+  <img src="https://github.com/user-attachments/assets/ae9696d6-e501-4e7d-8e18-3af48c804a24" width="400" /> 
 
 </p>
 
