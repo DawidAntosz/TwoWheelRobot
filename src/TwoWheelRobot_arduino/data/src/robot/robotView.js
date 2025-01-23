@@ -12,6 +12,8 @@ export class RobotView {
       this.robotLoaded = true;
     };
     this.robotSize = 100;
+    this.offsetX = -29;
+    this.offsetY = 0;
 
     // Robot controlls
     this.lastUpdateTime = performance.now();
@@ -21,22 +23,25 @@ export class RobotView {
       theta: -Math.PI / 2,
     };
 
-    this.acceleration = 10;
-    this.angularAcceleration = Math.PI / 2;
+    this.acceleration = 100;
+    this.angularAcceleration = Math.PI / 10;
+
+    this.velocity = 0;
+    this.angularVelocity;
+    this.wheelRadius = 0.02;
+    this.wheelbase = 0.1;
   }
 
   drawRobot(ctx) {
     if (!this.robotLoaded) return;
-
     const { x, y, theta } = this.robotPosition;
-
     this.ctx.save();
-    this.ctx.translate(this.robotPosition.x, this.robotPosition.y);
+    this.ctx.translate(x, y);
     this.ctx.rotate(this.robotPosition.theta);
     this.ctx.drawImage(
       this.robotImage,
-      -this.robotSize / 2,
-      -this.robotSize / 2,
+      -this.robotSize / 2 - this.offsetX,
+      -this.robotSize / 2 - this.offsetY,
       this.robotSize,
       this.robotSize
     );
@@ -54,22 +59,31 @@ export class RobotView {
       const deltaTime = (currentTime - this.lastUpdateTime) / 100;
       this.lastUpdateTime = currentTime;
 
-      let dv = 0;
-      let w = 0;
+      let wMax = maxSpeed / this.wheelBase;
 
-      if (up) dv += this.acceleration * deltaTime;
-      if (down) dv -= this.acceleration * deltaTime;
+      if (up && !down) {
+        this.velocity += this.acceleration * deltaTime;
+      } else if (down && !up) {
+        this.velocity -= this.acceleration * deltaTime;
+      } else {
+        this.velocity = 0;
+      }
+      this.velocity = Math.max(Math.min(this.velocity, maxSpeed), -maxSpeed);
 
-      if (left) w -= this.angularAcceleration * deltaTime;
-      if (right) w += this.angularAcceleration * deltaTime;
+      if (left && !right) {
+        this.angularVelocity -= this.angularAcceleration * deltaTime;
+      } else if (right && !left) {
+        this.angularVelocity += this.angularAcceleration * deltaTime;
+      } else {
+        this.angularVelocity = 0;
+      }
 
-      theta += w * deltaTime;
-
-      x += dv * Math.cos(theta) * deltaTime;
-      y += dv * Math.sin(theta) * deltaTime;
-
+      theta += this.angularVelocity * deltaTime;
+      theta = ((theta % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+      console.log(theta);
+      x += this.velocity * Math.cos(theta) * deltaTime;
+      y += this.velocity * Math.sin(theta) * deltaTime;
       this.robotPosition = { x, y, theta };
-      console.log(`Position: (${x}, ${y}), Theta: ${theta}`);
     }
   }
 }
