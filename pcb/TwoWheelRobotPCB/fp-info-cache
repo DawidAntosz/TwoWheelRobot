@@ -1,4 +1,11 @@
-20424880411008808
+20428361420813695
+AS5600
+SOIC127P600X175-8N
+<b>SOIC-8</b><br>
+
+0
+8
+8
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -2154,6 +2161,13 @@ SW PUSH SMALL http://www.ckswitches.com/media/1457/ksa_ksl.pdf
 SW PUSH SMALL Tactile C&K
 0
 4
+2
+Button_boot
+SKRK
+<b>SKRK</b><br>
+
+0
+2
 2
 Buzzer_Beeper
 Buzzer_12x9.5RM7.6
