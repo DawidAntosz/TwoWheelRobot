@@ -1,4 +1,4 @@
-20428361420813695
+20435326561951705
 AS5600
 SOIC127P600X175-8N
 <b>SOIC-8</b><br>
@@ -58617,6 +58617,13 @@ Yellow 5381 Series LED
 0
 2
 2
+Library_Keyboard
+Matrix_keyboard_3x4
+
+
+0
+7
+7
 MCP3004_footprint
 SOIC127P600X175-14N
 
@@ -79512,6 +79519,13 @@ rotary encoder
 0
 5
 4
+SW_turnOn
+TE_2267077-2
+
+
+0
+6
+6
 Sensor
 Aosong_DHT11_5.5x12.0_P2.54mm
 Temperature and humidity module, http://akizukidenshi.com/download/ds/aosong/DHT11.pdf
@@ -86456,6 +86470,20 @@ varistor SIOV
 0
 2
 2
+XL4015
+CONV_XL4015
+
+
+0
+6
+6
+XL4015
+mojeWire
+
+
+0
+6
+3
 button
 2_4InchWaveshareLCD
 
